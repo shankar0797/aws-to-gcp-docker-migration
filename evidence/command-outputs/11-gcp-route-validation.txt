@@ -1,0 +1,21 @@
+# E11 - GCP Application Route Validation
+
+Test date: 2026-10-13
+Target VM: aws-migration-target
+Target zone: asia-south1-c
+Reverse proxy endpoint: http://34.47.197.186:8081
+
+## Results
+
+| Test path | Result | Response |
+|---|---|---|
+| API gateway /users | HTTP 200 | User service is working |
+| API gateway /orders | HTTP 200 | Order service is working |
+| API gateway /payments | HTTP 200 | Payment service is working |
+| Reverse proxy /users | HTTP 200 | User service is working |
+| Reverse proxy /orders | HTTP 200 | Order service is working |
+| Reverse proxy /payments | HTTP 200 | Payment service is working |
+
+Conclusion: All six tested requests returned HTTP 200 and the expected service-specific success response.
+
+Limitations: These tests verify HTTP routing and responses only. They do not establish persistent-data integrity, production load capacity, high availability, HTTPS, or rollback readiness.

@@ -1,0 +1,8 @@
+IMAGE                    ID             DISK USAGE   CONTENT SIZE   EXTRA
+api-gateway:1.0          9d2003fc5b59   132MB         64.3MB        U
+curlimages/curl:latest   58adaa4e8dca   35.4MB         10.7MB
+forward-proxy:1.0        89001aa5fdec   573MB          274MB
+order-service:1.0        bd5cafebf07b   258MB          124MB        U
+payment-service:1.0      1dead04cc24b   258MB          124MB        U
+reverse-proxy:1.1        06566cf34e8d   132MB         64.3MB        U
+user-service:1.0         c07bff7a767f   258MB          124MB        U

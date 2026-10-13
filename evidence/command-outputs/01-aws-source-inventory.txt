@@ -1,0 +1,88 @@
+===== SOURCE HOST INVENTORY =====
+2026-10-13T18:39:26+00:00
+ip-172-31-14-0.ap-south-1.compute.internal
+Linux ip-172-31-14-0.ap-south-1.compute.internal 6.18.48-107.148.amzn2023.x86_64 #2 SMP PREEMPT_DYNAMIC Tue Sep  8 22:48:17 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+
+===== OPERATING SYSTEM =====
+NAME="Amazon Linux"
+VERSION="2023"
+ID="amzn"
+ID_LIKE="fedora"
+VERSION_ID="2023"
+PLATFORM_ID="platform:al2023"
+PRETTY_NAME="Amazon Linux 2023.12.20260917"
+ANSI_COLOR="0;33"
+CPE_NAME="cpe:2.3:o:amazon:amazon_linux:2023"
+HOME_URL="https://aws.amazon.com/linux/amazon-linux-2023/"
+DOCUMENTATION_URL="https://docs.aws.amazon.com/linux/"
+SUPPORT_URL="https://aws.amazon.com/premiumsupport/"
+BUG_REPORT_URL="https://github.com/amazonlinux/amazon-linux-2023"
+VENDOR_NAME="AWS"
+VENDOR_URL="https://aws.amazon.com/"
+SUPPORT_END="2029-06-30"
+
+===== CPU AND MEMORY =====
+2
+               total        used        free      shared  buff/cache   available
+Mem:           913Mi       198Mi        64Mi       440Mi       649Mi       136Mi
+Swap:             0B          0B          0B
+
+===== DISK USAGE =====
+Filesystem       Type      Size  Used Avail Use% Mounted on
+devtmpfs         devtmpfs  4.0M     0  4.0M   0% /dev
+tmpfs            tmpfs     457M     0  457M   0% /dev/shm
+tmpfs            tmpfs     183M  488K  183M   1% /run
+efivarfs         efivarfs  128K  2.7K  121K   3% /sys/firmware/efi/efivars
+/dev/nvme0n1p1   xfs        12G  5.8G  6.2G  49% /
+tmpfs            tmpfs     457M  441M   17M  97% /tmp
+/dev/nvme0n1p128 vfat       10M  1.3M  8.7M  13% /boot/efi
+tmpfs            tmpfs      92M     0   92M   0% /run/user/1000
+
+===== DOCKER VERSION =====
+Docker version 25.0.14, build 0bab007
+
+===== CONTAINER STATUS =====
+CONTAINER ID                                                       IMAGE                 COMMAND                                          CREATED       STATUS                     PORTS     NAMES
+d6e3014b465ae8de5e870a27cf59339faf856add8edabb3e3251c0bcbe72b3cf   api-gateway:1.0       "/docker-entrypoint.sh nginx -g 'daemon off;'"   2 weeks ago   Exited (0) 2 weeks ago               api-gateway
+c60eac586269c5f20ba7ad932aa65f98f58db73b5828b9cb9fa75c792b4afb66   payment-service:1.0   "python app.py"                                  2 weeks ago   Exited (137) 2 weeks ago             payment-service
+1a74eebe8ae1043900af43f0cf38b8841bf430d1a326cb4a74b5013ede040f04   order-service:1.0     "python app.py"                                  2 weeks ago   Exited (137) 2 weeks ago             order-service
+81400547e72f11e4599ec71c251234b42bfdc035d56fc6c7d524b42959fc6860   user-service:1.0      "python app.py"                                  2 weeks ago   Exited (137) 2 weeks ago             user-service
+9e5c76bd31e22f849d0561bc26192cb90d1675aacc7760a48b2af4278192d6e2   forward-proxy:1.0     "squid -N -d 1"                                  2 weeks ago   Exited (137) 2 weeks ago             forward-proxy
+42a94835ecad2b70f4dc31162079044749cb3be9652a2ab469adb29f0cb8d0df   reverse-proxy:1.1     "/docker-entrypoint.sh nginx -g 'daemon off;'"   2 weeks ago   Exited (0) 2 weeks ago               reverse-proxy
+
+===== LOCAL IMAGES =====
+REPOSITORY                                                              TAG       DIGEST                                                                    IMAGE ID       CREATED       SIZE
+forward-proxy                                                           1.0       <none>                                                                    e8d95c3d6cbc   2 weeks ago   264MB
+reverse-proxy                                                           1.1       <none>                                                                    520fdcee0750   2 weeks ago   62.9MB
+reverse-proxy                                                           1.0       <none>                                                                    adfc5562e935   2 weeks ago   62.9MB
+api-gateway                                                             1.0       <none>                                                                    dabca80c1570   2 weeks ago   62.9MB
+payment-service                                                         1.0       <none>                                                                    2393289651f3   2 weeks ago   119MB
+order-service                                                           1.0       <none>                                                                    f8700ef71671   2 weeks ago   119MB
+user-service                                                            1.0       <none>                                                                    705623d13c83   2 weeks ago   119MB
+683604924610.dkr.ecr.ap-south-1.amazonaws.com/ecommerce-dev-order-api   1.1       sha256:e938e51b4988b5201f36a25c6b850c895d91533801f9b2ab7871d6e0985b888e   a8d403ad2c12   3 weeks ago   175MB
+ecommerce-order-api                                                     1.1       <none>                                                                    a8d403ad2c12   3 weeks ago   175MB
+683604924610.dkr.ecr.ap-south-1.amazonaws.com/ecommerce-dev-order-api   1.0       sha256:f9eec1fb3b86d7e9fd5621ecb3a1f413399ed533864d3692deb4cd5a4ff93433   c83b3416a3b2   3 weeks ago   159MB
+ecommerce-order-api                                                     1.0       <none>                                                                    c83b3416a3b2   3 weeks ago   159MB
+
+===== DOCKER NETWORKS =====
+NETWORK ID     NAME              DRIVER    SCOPE
+0cb43833b9a9   backend-network   bridge    local
+672c40d62df5   bridge            bridge    local
+42012b7f0bd8   host              host      local
+48d760a1eb5f   none              null      local
+
+===== DOCKER VOLUMES =====
+DRIVER    VOLUME NAME
+
+===== LISTENING TCP/UDP SOCKETS =====
+Netid State  Recv-Q Send-Q                   Local Address:Port  Peer Address:PortProcess
+udp   UNCONN 0      0                     172.31.14.0%ens5:68         0.0.0.0:*          
+udp   UNCONN 0      0                            127.0.0.1:323        0.0.0.0:*          
+udp   UNCONN 0      0      [fe80::8ff:cfff:fede:9155]%ens5:546           [::]:*          
+udp   UNCONN 0      0                                [::1]:323           [::]:*          
+tcp   LISTEN 0      4096                         127.0.0.1:40297      0.0.0.0:*          
+tcp   LISTEN 0      128                            0.0.0.0:22         0.0.0.0:*          
+tcp   LISTEN 0      128                               [::]:22            [::]:*          
+
+===== INVENTORY COMPLETE =====
+Review output for secrets or sensitive details before sharing.

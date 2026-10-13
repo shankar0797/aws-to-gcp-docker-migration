@@ -1,0 +1,36 @@
+===== DOCKER HEALTH CHECK =====
+2026-10-13T18:52:52+00:00
+===== DOCKER SERVICE =====
+active
+===== CONTAINER STATUS =====
+CONTAINER ID   IMAGE                 COMMAND                  CREATED             STATUS             PORTS                                                 NAMES
+32d736e45c67   reverse-proxy:1.1     "/docker-entrypoint.…"   About an hour ago   Up About an hour   80/tcp, 0.0.0.0:8081->8081/tcp, [::]:8081->8081/tcp   reverse-proxy
+47481429f192   api-gateway:1.0       "/docker-entrypoint.…"   About an hour ago   Up About an hour   80/tcp, 8080/tcp                                      api-gateway
+c279aea990b5   payment-service:1.0   "python app.py"          About an hour ago   Up About an hour   8003/tcp                                              payment-service
+c4493891959b   order-service:1.0     "python app.py"          About an hour ago   Up About an hour   8002/tcp                                              order-service
+a0182a5a13ec   user-service:1.0      "python app.py"          About an hour ago   Up About an hour   8001/tcp                                              user-service
+===== DOCKER IMAGES =====
+WARNING: This output is designed for human readability. For machine-readable output, please use --format.
+IMAGE                    ID             DISK USAGE   CONTENT SIZE   EXTRA
+api-gateway:1.0          9d2003fc5b59        132MB         64.3MB   U    
+curlimages/curl:latest   58adaa4e8dca       35.4MB         10.7MB        
+forward-proxy:1.0        89001aa5fdec        573MB          274MB        
+order-service:1.0        bd5cafebf07b        258MB          124MB   U    
+payment-service:1.0      1dead04cc24b        258MB          124MB   U    
+reverse-proxy:1.1        06566cf34e8d        132MB         64.3MB   U    
+user-service:1.0         c07bff7a767f        258MB          124MB   U    
+===== APPLICATION ENDPOINTS =====
+--- http://127.0.0.1:8081/health
+Reverse Proxy is healthy
+
+HTTP status: 200
+--- http://127.0.0.1:8081/users
+{"service": "user-service", "status": "success", "message": "User service is working"}
+HTTP status: 200
+--- http://127.0.0.1:8081/orders
+{"service": "order-service", "status": "success", "message": "Order service is working"}
+HTTP status: 200
+--- http://127.0.0.1:8081/payments
+{"service": "payment-service", "status": "success", "message": "Payment service is working"}
+HTTP status: 200
+===== HEALTH CHECK COMPLETE =====

@@ -1,0 +1,6 @@
+CONTAINER ID   IMAGE                 COMMAND                  CREATED          STATUS          PORTS                                                 NAMES
+32d736e45c67   reverse-proxy:1.1     "/docker-entrypoint.…"   24 minutes ago   Up 24 minutes   80/tcp, 0.0.0.0:8081->8081/tcp, [::]:8081->8081/tcp   reverse-proxy
+47481429f192   api-gateway:1.0       "/docker-entrypoint.…"   24 minutes ago   Up 24 minutes   80/tcp, 8080/tcp                                      api-gateway
+c279aea990b5   payment-service:1.0   "python app.py"          24 minutes ago   Up 24 minutes   8003/tcp                                              payment-service
+c4493891959b   order-service:1.0     "python app.py"          24 minutes ago   Up 24 minutes   8002/tcp                                              order-service
+a0182a5a13ec   user-service:1.0      "python app.py"          24 minutes ago   Up 24 minutes   8001/tcp                                              user-service

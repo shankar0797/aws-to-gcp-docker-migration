@@ -1,0 +1,53 @@
+﻿# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials
+credentials.json
+application_default_credentials.json
+service-account*.json
+secrets/
+
+# Terraform state and local working data
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Cloud and SSH local configuration
+.ssh/
+.aws/
+.gcloud/
+known_hosts
+
+# Docker image archives and large artifacts
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+
+# Editors and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Keep genuine, reviewed evidence files in the repository
